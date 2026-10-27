@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Легче - подбор активных колясок</title>
+<meta name="description" content="Демо-лендинг по ТЗ заказчика: экосистема мобильности «Легче», подбор активных колясок, доставка по РФ, сертификаты СФР.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F8F7;
+  --paper:#FFFFFF;
+  --ink:#10302D;
+  --muted:#4B6360;
+  --line:#D3E1DF;
+  --accent:#0A6B66;
+  --accent-dark:#075752;
+  --accent-ink:#FFFFFF;
+  --sun:#FFD25E;
+  --soft:#E1F0EE;
+  --head:"Manrope",system-ui,sans-serif;
+  --sans:"Golos Text",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid #1d4ed8;outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.15;margin:0;letter-spacing:-.015em}
+h1{font-size:clamp(2rem,4.8vw,3.2rem);max-width:19em}
+h2{font-size:clamp(1.6rem,3.2vw,2.3rem);margin-bottom:16px}
+h3{font-size:1.15rem}
+p{margin:0 0 1em;max-width:64ch}
+.demo{background:#FFF3C4;color:#4a3d00;font-size:.88rem;text-align:center;padding:8px 14px}
+
+/* шапка */
+.top{background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);line-height:1.2}
+.brand b{font-family:var(--head);font-weight:800;font-size:1.5rem;color:var(--accent)}
+.brand small{font-size:.8rem;color:var(--muted)}
+.desc{flex:1;min-width:230px;font-size:.92rem;color:var(--muted);max-width:34ch}
+.contacts{display:flex;align-items:center;gap:12px}
+.tel{font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap;font-size:1.05rem}
+.ic{display:inline-flex;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center;background:var(--soft);color:var(--accent);text-decoration:none}
+.ic:hover{background:var(--accent);color:#fff}
+.ic svg{width:20px;height:20px}
+.hint{font-size:.78rem;color:var(--muted);line-height:1.2;max-width:11em}
+@media(max-width:900px){.hint{display:none}}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font:600 1rem var(--sans);padding:14px 24px;border:0;border-radius:8px;text-decoration:none;cursor:pointer;transition:background-color .15s}
+.btn:hover{background:var(--accent-dark)}
+.btn.sm{padding:11px 18px;font-size:.95rem}
+.btn.line{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+.btn.line:hover{background:var(--accent);color:#fff}
+
+/* первый экран */
+.hero{padding:56px 0 48px}
+.hero .lead{font-size:1.15rem;color:var(--muted);margin:20px 0 26px;max-width:54ch}
+.start{display:flex;gap:10px;max-width:720px;flex-wrap:wrap}
+.start input{flex:1 1 300px;font:inherit;padding:14px 16px;border:2px solid #9FB7B4;border-radius:8px;background:#fff;color:var(--ink);min-width:0}
+.start input:focus{border-color:var(--accent)}
+.start-note{font-size:.9rem;color:var(--muted);margin:10px 0 0}
+.check{display:grid;grid-template-columns:auto 1fr;gap:16px;margin-top:34px;padding:20px 22px;background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--sun);border-radius:10px;max-width:820px}
+.check svg{width:34px;height:34px;color:var(--accent)}
+.check p{margin:0;font-size:1rem;max-width:none}
+.check b{font-weight:600}
+
+/* о компании */
+.about{background:var(--paper);border-block:1px solid var(--line);padding:60px 0}
+.cols{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:48px;align-items:start}
+@media(max-width:860px){.cols{grid-template-columns:1fr;gap:28px}}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{background:var(--bg);border-radius:10px;padding:18px}
+.stat b{display:block;font-family:var(--head);font-weight:800;font-size:2.3rem;line-height:1;color:var(--accent)}
+.stat span{display:block;font-size:.92rem;color:var(--muted);margin-top:6px;line-height:1.35}
+.fine{font-size:.82rem;color:var(--muted);margin-top:12px;max-width:none}
+.about .strong{font-weight:600;font-size:1.1rem}
+
+section.block{padding:60px 0}
+/* проблемы */
+.probs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+@media(max-width:860px){.probs{grid-template-columns:1fr}}
+.prob{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px}
+.prob h3{margin-bottom:8px}
+.prob p{margin:0;color:var(--muted);font-size:1rem}
+
+/* этапы */
+.steps{counter-reset:s;list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px 22px 22px 70px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:18px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font:700 1.1rem var(--head);display:flex;align-items:center;justify-content:center}
+.steps h3{margin-bottom:6px}
+.steps p{margin:0;color:var(--muted);font-size:1rem}
+
+/* карусели */
+.car-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.car-head p{margin:0;color:var(--muted)}
+.arrows{display:flex;gap:8px}
+.arrows button{width:46px;height:46px;border-radius:50%;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer;font-size:1.3rem;line-height:1}
+.arrows button:hover{background:var(--accent);color:#fff}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.card{flex:0 0 min(290px,82%);scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:0;display:flex;flex-direction:column}
+.card .pic{height:130px;background:var(--soft);border-radius:12px 12px 0 0;display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.card .pic svg{width:92px;height:92px}
+.card .in{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:1.1rem}
+.card .price{font-family:var(--head);font-weight:800;font-size:1.35rem;color:var(--accent)}
+.card p{margin:0;font-size:.95rem;color:var(--muted)}
+.cta-row{margin-top:20px}
+
+.logos{background:var(--paper);border-block:1px solid var(--line);padding:46px 0}
+.logo-row{display:flex;flex-wrap:wrap;gap:14px 14px;margin-top:20px}
+.logo-row span{font-family:var(--head);font-weight:700;font-size:1.1rem;padding:12px 22px;border:1px solid var(--line);border-radius:999px;color:#2f4744;background:var(--bg)}
+.logos .note{font-size:.85rem;color:var(--muted);margin-top:14px}
+
+/* форма */
+.apply{background:var(--accent-dark);color:#fff;padding:64px 0}
+.apply h2{color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.path{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:24px}
+.path h3{color:#fff;margin-bottom:10px;font-size:1.25rem}
+.path p{color:#D3E8E6;font-size:1rem}
+.path .start{margin-top:14px}
+.path .start input{border-color:transparent}
+.path .btn{background:var(--sun);color:#10302D}
+.path .btn:hover{background:#ffe08a}
+.thanks{display:none;margin-top:14px;background:#fff;color:var(--ink);border-radius:8px;padding:14px 16px;font-size:1rem}
+.thanks.show{display:block}
+
+footer{padding:36px 0 48px;color:var(--muted);font-size:.98rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 48px;justify-content:space-between}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:6px}
+footer li::before{content:"\2713";color:var(--accent);font-weight:700;margin-right:8px}
+footer p{margin:0 0 4px}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="demo">Демо по ТЗ заказчика. Тексты, цены и цифры взяты из ТЗ, цифры и цены требуют подтверждения заказчика. Телефон и контакты условные.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>Легче</b><small>Экосистема мобильности</small></a>
+    <p class="desc">Подбор активных колясок. Доставка по всей РФ. Принимаем сертификаты СФР</p>
+    <div class="contacts">
+      <a class="tel" href="tel:+78000000000">8 800 000-00-00</a>
+      <a class="ic" href="#" aria-label="Написать в Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.3 2.9 10.5c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.8.8.8.5 0 .7-.2 1-.5l2.3-2.3 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.2-.5-1.8-1.3-1.4zM8.6 13l9.4-5.9c.4-.3.8-.1.5.2L10.6 14.4l-.3 3.3z"/></svg></a>
+      <a class="ic" href="#" aria-label="Написать в Макс"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V6l8 9 8-9v13"/></svg></a>
+      <span class="hint">Напишите сейчас - ответим сразу</span>
+    </div>
+    <a class="btn sm" href="#zayavka">Оставить заявку</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <h1>Подберём активную коляску под бюджет, диагноз и доступную среду</h1>
+    <p class="lead">Не надо перебирать сотни интернет-магазинов ТСР, сравнивать цены и отбиваться от назойливых менеджеров. Все бренды в одном месте. Если не хватает суммы сертификата на нужную коляску, поможем исправить ИПРА или привлечь деньги благотворительного фонда.</p>
+    <form class="start" data-demo>
+      <label for="q1" class="sr" style="position:absolute;left:-9999px">Что нужно подобрать</label>
+      <input id="q1" type="text" placeholder="Например: нужна лёгкая складная коляска до 200 000 ₽">
+      <button class="btn" type="submit">Начать бесплатный подбор</button>
+    </form>
+    <p class="start-note" aria-live="polite" data-note></p>
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      <p><b>Двойная проверка подбора.</b> Нейросеть, обученная на 2000+ реальных случаях, проверяет выбор, правильность замеров и соответствие КТРУ. Опытный эрготерапевт ставит финальное профессиональное «одобряю».</p>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap cols">
+    <div>
+      <h2>О компании</h2>
+      <p>«Легче» - экосистема по подбору ТСР. Мы берём на себя весь путь к мобильности: замеры, анализ функционального состояния, корректировку ИПРА, привлечение фондов, если не хватает средств, и сопровождение после покупки.</p>
+      <p>В команде эрготерапевты, врачи и бывшие сотрудники магазинов ТСР. Мы видим, как устроена индустрия, и поэтому защищаем вас от бюрократии, завышенных цен и недобросовестных игроков.</p>
+      <p class="strong">Мы не продаём ТСР. Мы делаем мобильность доступной.</p>
+      <a class="btn" href="#zayavka">Оставить заявку</a>
+    </div>
+    <div>
+      <div class="stats">
+        <div class="stat"><b>79%</b><span>случаев успешной корректировки ИПРА</span></div>
+        <div class="stat"><b>×2</b><span>среднее увеличение суммы сертификата</span></div>
+        <div class="stat"><b>100%</b><span>клиентов получают помощь фондов</span></div>
+        <div class="stat"><b>0</b><span>возвратов и жалоб на подбор</span></div>
+      </div>
+      <p class="fine">Цифры из ТЗ заказчика, в рабочей версии подтверждаются документами.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Проблемы при подборе активной коляски в обычном интернет-магазине</h2>
+    <div class="probs">
+      <div class="prob"><h3>Конфликт ИПРА и реальности</h3><p>Осмотры врачей не всегда отражают реальные сценарии жизни.</p></div>
+      <div class="prob"><h3>Медицинские риски базовых комплектаций</h3><p>Стандартные модели могут не учитывать особенности диагноза: например, жёсткую спинку при шейных травмах или боковые поддержки и подголовник при ДЦП.</p></div>
+      <div class="prob"><h3>Конструктивные ловушки среды</h3><p>Антиопрокидыватели могут блокировать гусеничные подъёмники и пандусы, а неподходящие подлокотники делают пересаживание небезопасным.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <h2>Как проходит экспертный подбор</h2>
+    <p>Находим баланс между требованиями ИПРА, бюджетом и реальной потребностью.</p>
+    <ol class="steps">
+      <li><h3>Анализ ИПРА и антропометрии</h3><p>Изучаем медицинские документы, ищем решение и составляем план действий вместе. Если в ИПРА указана обычная коляска с ручным приводом, знаем, как юридически грамотно обосновать необходимость активной.</p></li>
+      <li><h3>Оценка среды эксплуатации</h3><p>Учитываем размер багажника вашего авто, ширину дверных проёмов дома, наличие пандусов и ваш уровень активности: работа, учёба, спорт.</p></li>
+      <li><h3>Подбор конфигурации</h3><p>Поможем выбрать раму, материал (алюминий, титан, карбон), тип колёс и подушку. Никаких лишних опций, за которые вы переплачиваете.</p></li>
+      <li><h3>Профессиональное обоснование</h3><p>Простым языком объясним, как каждая деталь, например развал задних колёс или антиопрокидыватели, влияет на вашу безопасность и скорость.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" style="background:var(--paper);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="car-head">
+      <div>
+        <h2>Активные коляски по ценам от прямых производителей</h2>
+        <p>Только проверенные модели для активной жизни. Цены без посредников.</p>
+      </div>
+      <div class="arrows"><button type="button" data-dir="-1" aria-label="Назад">&#8592;</button><button type="button" data-dir="1" aria-label="Вперёд">&#8594;</button></div>
+    </div>
+    <div class="track" id="track" tabindex="0" aria-label="Каталог колясок">
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Karma Ergo 115</h3><div class="price">от 65 000 ₽</div><p>Доступная облегчённая коляска из авиационного алюминия для повседневного использования.</p></div></article>
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Ortonica S 4000</h3><div class="price">от 89 000 ₽</div><p>Популярная активная модель с широкими возможностями регулировки.</p></div></article>
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Otto Bock Старт</h3><div class="price">от 95 000 ₽</div><p>Надёжная немецкая классика, 16 вариантов комплектации под любого пользователя.</p></div></article>
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Excel G6 High Active</h3><div class="price">от 115 000 ₽</div><p>Складная рама, регулировка жёсткости спинки, отличная маневренность.</p></div></article>
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Система жизни Вектор</h3><div class="price">от 125 000 ₽</div><p>Качественная российская активная коляска, адаптированная под наши реалии.</p></div></article>
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Vermeiren Sagitta</h3><div class="price">от 206 900 ₽</div><p>Высокая маневренность, премиальные материалы, идеальна для улицы и дома.</p></div></article>
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Progeo Joker</h3><div class="price">от 293 100 ₽</div><p>Полуактивная и активная коляска с превосходной стабильностью и комфортом.</p></div></article>
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Kuschall K-series 2.0</h3><div class="price">от 389 900 ₽</div><p>Швейцарское премиум-качество, минимальный вес, максимальная эффективность толчка.</p></div></article>
+      <article class="card"><div class="pic">__ICON__</div><div class="in"><h3>Quickie Krypton R</h3><div class="price">от 450 000 ₽</div><p>Спортивный уклон, карбоновые или алюминиевые рамы для максимальной активности.</p></div></article>
+    </div>
+    <div class="cta-row"><a class="btn" href="#zayavka">Показать все модели и получить помощь в подборе</a></div>
+  </div>
+</section>
+
+<section class="logos">
+  <div class="wrap">
+    <h2>Все производители в одном месте</h2>
+    <div class="logo-row"><span>Ortonica</span><span>Otto Bock</span><span>Meyra</span><span>Kuschall</span><span>Quickie</span><span>Vermeiren</span><span>Karma</span><span>Excel</span><span>Progeo</span><span>Система жизни</span></div>
+    <p class="note">В рабочей версии здесь будут логотипы производителей, их заказчик предоставит сам.</p>
+  </div>
+</section>
+
+<section class="apply" id="zayavka">
+  <div class="wrap">
+    <h2>Оставить заявку</h2>
+    <div class="two">
+      <div class="path">
+        <h3>Вы знаете нужную модель</h3>
+        <p>Если у вас есть опыт использования, мы сразу ответим по цене и срокам поставки, поможем с бланком заказа, забронируем товар и оформим с расширенной гарантией*.</p>
+        <form class="start" data-demo>
+          <input type="text" aria-label="Какая модель нужна" placeholder="Например: Ortonica S 4000, срок и цена">
+          <button class="btn" type="submit">Узнать цену и срок</button>
+        </form>
+        <div class="thanks" role="status"></div>
+      </div>
+      <div class="path">
+        <h3>Нужна экспертная помощь в подборе</h3>
+        <p>Специалист проанализирует ИПРА, состояние, бюджет и среду, подберёт несколько вариантов в режиме реального времени и простым языком объяснит значение всех опций и подводные камни каждой модели.</p>
+        <form class="start" data-demo>
+          <input type="text" aria-label="Что нужно подобрать" placeholder="Например: нужна лёгкая складная коляска до 100 000 ₽">
+          <button class="btn" type="submit">Начать бесплатный подбор</button>
+        </form>
+        <div class="thanks" role="status"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li>Принимаем электронные сертификаты СФР</li>
+      <li>Доставка по всей России</li>
+      <li>Официальная гарантия от производителей</li>
+    </ul>
+    <div>
+      <p><b>Контакты</b></p>
+      <p><a href="tel:+78000000000">8 800 000-00-00</a></p>
+      <p><a href="mailto:info@example.ru">info@example.ru</a></p>
+      <p>Telegram и Макс: ответим сразу</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var icon='<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="22" cy="44" r="14"/><circle cx="22" cy="44" r="2"/><circle cx="52" cy="53" r="4"/><path d="M26 30V12h8M26 30h18l6 18M34 12l10 18"/></svg>';
+  document.querySelectorAll('.pic').forEach(function(p){p.innerHTML=icon});
+  var track=document.getElementById('track');
+  document.querySelectorAll('.arrows button').forEach(function(b){
+    b.addEventListener('click',function(){track.scrollBy({left:+b.dataset.dir*306,behavior:'smooth'})});
+  });
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var msg='Спасибо! В рабочей версии здесь откроется короткая анкета и вы укажете телефон. В демо данные никуда не отправляются.';
+      var box=f.parentNode.querySelector('.thanks')||document.querySelector('[data-note]');
+      box.textContent=msg;box.classList.add('show');
+    });
+  });
+})();
+</script>
+</body>
+</html>
